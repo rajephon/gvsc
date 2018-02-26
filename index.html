@@ -10,10 +10,12 @@
 <meta name="twitter:title" content="개비스콘 짤 생성기">
 <meta name="twitter:description" content="당신만의 개비스콘 짤방을 만들어보세요!">
 <meta property="og:image" content="https://rajephon.github.io/gvsc/before.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style> @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css); 
 body {
@@ -30,36 +32,58 @@ body {
 .btn-twt:hover {
     color: #cef;
 }
+#footer {
+    margin:0;
+    padding:30px 0 30px 0;
+    width:100%;
+    background-color:#f3f3f3;
+    color:#000;
+}
+#footer a:link, #footer a:visited, #footer a:hover, #footer a:active, #footer a:focus {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+} 
 </style>
 </head>
 <body>
-    <div class="container">
-    <div class="row">
-        <div class="col-xs-6">
-            <div id="preview" style="float:left;">
-                <canvas id="mainCanvas" width="480" height="722"></canvas>
-            </div>
-        </div>
-        <div id="setting" class="col-xs-6">
-            <div class="page-header">
-                <h2>개비스콘 짤 생성기</h2>
-            </div>
-            <form>
-                <div class="form-group">
-                    <label for="txtBefore">속쓰림 키워드</label>
-                    <input type="text" class="form-control" name="" placeholder="시험,조별과제,알바,레포트,재수강,계절학기" id="txtBefore" value="시험,조별과제,알바,레포트,재수강,계절학기">
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="page-header">
+                                <h1>개비스콘 짤 생성기</h1>
+                        </div>
                 </div>
-                <div class="form-group">
-                    <label for="txtAfter">개운함 키워드</label>
-                    <input type="text" class="form-control" name="" placeholder="자퇴" id="txtAfter" value="자퇴">
-                </div>
-            </form>
-                <a class="btn btn-twt" id="btnDownload">
-                    <i class="fa fa-download"></i> Image Download</i>
-                </a>
+            </div>
         </div>
     </div>
-</div>
+    <div id="article">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div id="preview" style="float:left;">
+                        <canvas id="mainCanvas" width="480" height="722"></canvas>
+                    </div>
+                </div>
+                <div id="setting" class="col-xs-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="txtBefore">속쓰림 키워드</label>
+                            <input type="text" class="form-control" name="" placeholder="시험,조별과제,알바,레포트,재수강,계절학기" id="txtBefore" value="시험,조별과제,알바,레포트,재수강,계절학기">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtAfter">개운함 키워드</label>
+                            <input type="text" class="form-control" name="" placeholder="자퇴" id="txtAfter" value="자퇴">
+                        </div>
+                    </form>
+                        <a class="btn btn-twt" id="btnDownload">
+                            <i class="fa fa-download"></i> Image Download</i>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
 <script>
     var beforPositionArr = [{x:127,y:193},{x:330,y:220},{x:274,y:288},{x:245,y:148},{x:158,y:241},{x:136,y:304}];
     var beforeImg = new Image();
@@ -138,5 +162,14 @@ body {
   ga('create', 'UA-98733909-1', 'auto');
   ga('send', 'pageview');
 </script>
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                Developed by <a href="https://rajephon.github.io/">rajephon</a> / <a href="https://github.com/rajephon/gvsc" target="_blank">Github <i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
