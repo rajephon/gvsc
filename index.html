@@ -11,35 +11,39 @@
 <meta name="twitter:description" content="당신만의 개비스콘 짤방을 만들어보세요!">
 <meta property="og:image" content="https://rajephon.github.io/gvsc/before.jpg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <style> @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css); 
 body {
     font-family: 'Nanum Gothic';
 }
-.container {
-     width: 970px;
-    max-width: none !important;
+main {
+    margin: 15px 0 15px 0;
 }
-.btn-twt, .btn-twt:visited, .btn-twt:link, .btn-twt:active {
+main .container .row > div.col-lg-6 {
+    padding-left: 0;
+    padding-right: 0;
+}
+#btnDownload, #btnDownload:visited, #btnDownload:link, #btnDownload:active {
     background-color: #5bc0de;
     color: #fff;
 }
-.btn-twt:hover {
+#btnDownload:hover {
     color: #cef;
 }
-#footer {
+footer {
     margin:0;
     padding:30px 0 30px 0;
     width:100%;
     background-color:#f3f3f3;
     color:#000;
 }
-#footer a:link, #footer a:visited, #footer a:hover, #footer a:active, #footer a:focus {
+footer a:link, footer a:visited, footer a:hover, footer a:active, footer a:focus {
     color: #000;
     font-weight: bold;
     text-decoration: none;
@@ -47,26 +51,18 @@ body {
 </style>
 </head>
 <body>
-    <div id="header">
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1"><strong>개비스콘 짤 생성기</strong></span>
+        </nav>
+    </header>
+    <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                        <div class="page-header">
-                                <h1>개비스콘 짤 생성기</h1>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="article">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6">
-                    <div id="preview" style="float:left;">
+                <div class="col-sm-6 col-md-8 col-lg-6 col-xl-6">
                         <canvas id="mainCanvas" width="480" height="722"></canvas>
-                    </div>
                 </div>
-                <div id="setting" class="col-xs-6">
+                <div id="setting" class="col-md-6 col-md-6 col-lg-6 col-xl-6" style="padding-left:5px;">
                     <form>
                         <div class="form-group">
                             <label for="txtBefore">속쓰림 키워드</label>
@@ -77,13 +73,13 @@ body {
                             <input type="text" class="form-control" name="" placeholder="자퇴" id="txtAfter" value="자퇴">
                         </div>
                     </form>
-                        <a class="btn btn-twt" id="btnDownload">
-                            <i class="fa fa-download"></i> Image Download</i>
+                        <a class="btn btn-download" id="btnDownload">
+                            <i class="fa fa-download"></i> 내려받기
                         </a>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 <script>
     var beforPositionArr = [{x:127,y:193},{x:330,y:220},{x:274,y:288},{x:245,y:148},{x:158,y:241},{x:136,y:304}];
     var beforeImg = new Image();
@@ -162,7 +158,7 @@ body {
   ga('create', 'UA-98733909-1', 'auto');
   ga('send', 'pageview');
 </script>
-<div id="footer">
+<footer>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -170,6 +166,6 @@ body {
             </div>
         </div>
     </div>
-</div>
+</footer>
 </body>
 </html>
