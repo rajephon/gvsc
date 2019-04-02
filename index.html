@@ -18,40 +18,7 @@
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<style> @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css); 
-body {
-    font-family: 'Nanum Gothic';
-}
-main {
-    margin: 15px 0 15px 0;
-}
-main .container .row > div.col-lg-6 {
-    padding-left: 0;
-    padding-right: 0;
-}
-#mainCanvas {
-    max-width: 100%;
-}
-#btnDownload, #btnDownload:visited, #btnDownload:link, #btnDownload:active {
-    background-color: #5bc0de;
-    color: #fff;
-}
-#btnDownload:hover {
-    color: #cef;
-}
-footer {
-    margin:0;
-    padding:30px 0 30px 0;
-    width:100%;
-    background-color:#f3f3f3;
-    color:#000;
-}
-footer a:link, footer a:visited, footer a:hover, footer a:active, footer a:focus {
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-} 
-</style>
+<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
     <header>
@@ -164,6 +131,9 @@ footer a:link, footer a:visited, footer a:hover, footer a:active, footer a:focus
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-98733909-1', 'auto');
   ga('send', 'pageview');
+</script>
+<script>
+    $(function(){$('#btnDownload').click(function(){constvalue=JSON.stringify({before:$('#txtBefore').val(),after:$('#txtAfter').val()});console.log(value);ga('send','event','gvsc','download',value);});});
 </script>
 <footer>
     <div class="container">

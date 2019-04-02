@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css); 
+body {
+    font-family: 'Nanum Gothic';
+}
+main {
+    margin: 15px 0 15px 0;
+}
+main .container .row > div.col-lg-6 {
+    padding-left: 0;
+    padding-right: 0;
+}
+#mainCanvas {
+    max-width: 100%;
+}
+#btnDownload, #btnDownload:visited, #btnDownload:link, #btnDownload:active {
+    background-color: #5bc0de;
+    color: #fff;
+}
+#btnDownload:hover {
+    color: #cef;
+}
+footer {
+    margin:0;
+    padding:30px 0 30px 0;
+    width:100%;
+    background-color:#f3f3f3;
+    color:#000;
+}
+footer a:link, footer a:visited, footer a:hover, footer a:active, footer a:focus {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+} 
