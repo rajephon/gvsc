@@ -114,12 +114,12 @@
         ctx.scale(1,1);
         beforeImg.onload = function(){
             ctx.drawImage(beforeImg, 0, 0);
+            $('#txtBefore').keyup(); $('#txtAfter').keyup();
         };
         beforeImg.src = "./before.jpg";
         afterImg.onload = function() {
             ctx.drawImage(afterImg, 0, 360);
-            $('#txtBefore').keyup();
-            $('#txtAfter').keyup();
+            $('#txtBefore').keyup(); $('#txtAfter').keyup();
         };
         afterImg.src = "./after.jpg";
     };
