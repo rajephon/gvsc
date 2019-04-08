@@ -52,12 +52,11 @@
         </div>
     </main>
 <script>
-    var beforPositionArr = [{x:127,y:193},{x:330,y:220},{x:274,y:288},{x:245,y:148},{x:158,y:241},{x:136,y:304}];
-    var beforeImg = new Image();
-    var afterImg = new Image();
-    var mainCanvas = document.getElementById("mainCanvas");
-
-    var drawStroked = function drawStroked(ctx, text, x, y) {
+    const beforPositionArr = [{x:127,y:193},{x:330,y:220},{x:274,y:288},{x:245,y:148},{x:158,y:241},{x:136,y:304}];
+    const beforeImg = new Image();
+    const afterImg = new Image();
+    const mainCanvas = document.getElementById("mainCanvas");
+    const drawStroked = function (ctx, text, x, y) {
         ctx.strokeStyle = '#222';
         ctx.lineWidth = 4;
         ctx.strokeText(text, x, y);
@@ -65,28 +64,29 @@
         ctx.fillStyle = 'white';
         ctx.fillText(text, x, y);
     }
-
-    var fncAddKeyword = function addKeyword(ctx, txt, pos, color) {
+    const fncAddKeyword = function (ctx, txt, pos, color) {
         ctx.shadowColor = color;
         ctx.font = "20pt 'Nanum Gothic'";
         ctx.lineWidth = 3;
         drawStroked(ctx, txt, pos.x, pos.y);
     }
     $(function(){
-        $('#txtBefore').keyup(function(e) {
-            var bf = $(this).val();
-            var bfSplit = bf.split(',');
-            var ctx = mainCanvas.getContext("2d");
+        const $txtBefore = $('#txtBefore');
+        const $txtAfter = $('#txtAfter');
+        $txtBefore.keyup(function(e) {
+            const bf = $(this).val();
+            const bfSplit = bf.split(',');
+            const ctx = mainCanvas.getContext("2d");
             ctx.shadowColor = "transparent";
             ctx.drawImage(beforeImg, 0, 0);
-            var length = Math.min(bfSplit.length, beforPositionArr.length);
-            for (var idx = 0; idx < length; idx++) {
+            const length = Math.min(bfSplit.length, beforPositionArr.length);
+            for (let idx = 0; idx < length; idx++) {
                 fncAddKeyword(ctx, bfSplit[idx], beforPositionArr[idx], "#ff5555");
             }
         });
-        $('#txtAfter').keyup(function() {
-            var af = $(this).val();
-            var ctx = mainCanvas.getContext("2d");
+        $txtAfter.keyup(function() {
+            const af = $(this).val();
+            const ctx = mainCanvas.getContext("2d");
             ctx.shadowColor = "transparent";
             ctx.drawImage(afterImg, 0, 360);
             ctx.shadowColor = "blue";
@@ -96,33 +96,33 @@
             ctx.textAlign="start"; 
         });
         $('#btnDownload').click(function(){
-            var href = mainCanvas.toDataURL();
+            const href = mainCanvas.toDataURL();
             this.href = href;
             this.download = "gvsc.png";
         });
         if (navigator.userAgent.indexOf('Twitter') !== -1) {
             $('.messageArea').html('트위터 앱에서는 이미지 저장이 불가합니다.<br>웹 브라우저(사파리, 크롬, 등)으로 다시 접속해주세요.');
         }
+        window.onload = function(){
+            const ctx = mainCanvas.getContext("2d");
+            ctx.fillStyle = "white";
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0; 
+            ctx.shadowBlur = 17;
+            ctx.textBaseline = 'alphabetic';
+            ctx.scale(1,1);
+            beforeImg.onload = function(){
+                ctx.drawImage(beforeImg, 0, 0);
+                $txtBefore.keyup(); $txtAfter.keyup();
+            };
+            beforeImg.src = "./before.jpg";
+            afterImg.onload = function() {
+                ctx.drawImage(afterImg, 0, 360);
+                $txtBefore.keyup(); $txtAfter.keyup();
+            };
+            afterImg.src = "./after.jpg";
+        };
     });
-    window.onload = function(){
-        var ctx = mainCanvas.getContext("2d");
-        ctx.fillStyle = "white";
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0; 
-        ctx.shadowBlur = 17;
-        ctx.textBaseline = 'alphabetic';
-        ctx.scale(1,1);
-        beforeImg.onload = function(){
-            ctx.drawImage(beforeImg, 0, 0);
-            $('#txtBefore').keyup(); $('#txtAfter').keyup();
-        };
-        beforeImg.src = "./before.jpg";
-        afterImg.onload = function() {
-            ctx.drawImage(afterImg, 0, 360);
-            $('#txtBefore').keyup(); $('#txtAfter').keyup();
-        };
-        afterImg.src = "./after.jpg";
-    };
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
