@@ -52,7 +52,7 @@
         </div>
     </main>
 <script>
-    const beforPositionArr = [{x:127,y:193},{x:330,y:220},{x:274,y:288},{x:245,y:148},{x:158,y:241},{x:136,y:304}];
+    const beforePositionArr = [{x:127,y:193},{x:330,y:220},{x:274,y:288},{x:245,y:148},{x:158,y:241},{x:136,y:304}];
     const beforeImg = new Image();
     const afterImg = new Image();
     const mainCanvas = document.getElementById("mainCanvas");
@@ -79,9 +79,9 @@
             const ctx = mainCanvas.getContext("2d");
             ctx.shadowColor = "transparent";
             ctx.drawImage(beforeImg, 0, 0);
-            const length = Math.min(bfSplit.length, beforPositionArr.length);
+            const length = Math.min(bfSplit.length, beforePositionArr.length);
             for (let idx = 0; idx < length; idx++) {
-                fncAddKeyword(ctx, bfSplit[idx], beforPositionArr[idx], "#ff5555");
+                fncAddKeyword(ctx, bfSplit[idx], beforePositionArr[idx], "#ff5555");
             }
         });
         $txtAfter.keyup(function() {
