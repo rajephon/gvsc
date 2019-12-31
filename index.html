@@ -124,14 +124,6 @@
         };
     });
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98733909-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-98733909-3');
-</script>
 <script>
     $(function(){$('#btnDownload').click(function(){const value=JSON.stringify({before:$('#txtBefore').val(),after:$('#txtAfter').val()});ga('send','event','gvsc','download',value)})});
 </script>
@@ -145,5 +137,13 @@
         </div>
     </div>
 </footer>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-98733909-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-98733909-3');
+</script>
 </body>
 </html>
