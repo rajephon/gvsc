@@ -132,10 +132,7 @@
     });
 </script>
 <script>
-    $(function(){$('#btnDownload').click(function(){
-      const v=JSON.stringify({before:$('#txtBefore').val(),after:$('#txtAfter').val()});
-      gtag('event', 'gvsc', { event_category:'download', 'event_label':v });
-    })});
+    $(function(){$('#btnDownload').click(function(){const v=JSON.stringify({before:$('#txtBefore').val(),after:$('#txtAfter').val()});gtag('event', 'gvsc', { event_category:'download', 'event_label':v });})});
 </script>
 <footer>
     <div class="container">
